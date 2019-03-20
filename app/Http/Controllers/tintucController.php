@@ -59,7 +59,7 @@ class tintucController extends Controller
 
         if($request->hasFile('image')){
             $file = $request->file('image');
-            $duoi = $file->getClientOriginalExtension();
+            $duoi = $file[0]->getClientOriginalExtension();
                 if($duoi != 'jpg' && $duoi != 'png'){
                     return view('admin/tintuc/add')->with('loi',' Đuôi ảnh không hợp lệ');
                 }

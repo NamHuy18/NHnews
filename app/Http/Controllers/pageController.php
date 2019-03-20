@@ -59,8 +59,8 @@ class pageController extends Controller
     		'password.required'=>'Bạn chưa nhập mật khẩu'
     	]);
 
-    	if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
-
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
+        {
     		return redirect('home');
     	}
     	else{
